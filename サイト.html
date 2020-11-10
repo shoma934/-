@@ -1,5 +1,7 @@
 <html>
 <head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
 <style>
 
 </style>
@@ -7,8 +9,29 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<script>
+    
+   $(function(){
+  var imgs = $("#slideshow > li");
+  var imgLen = imgs.length;
+  var count = 0;
+  function changeImg(){
+    count = (count + 1) % imgLen;
+    imgs.removeClass("showSlide").eq(count).addClass("showSlide");
+  }
+  setInterval(changeImg, 5000);
+})
+  </script>
+
 <header>
- 
+    <ul id="slideshow" class="slideshow">
+        <li class="showSlide"><img src="リヴァイ.jpg"></li>
+        <li><img src="エース.jpg"></li>
+        <li><img src="onepiece.jpg"></li>
+        <li><img src="ぜんいつ.jpg"></li>
+        <li><img src="はしら.jpg"></li>
+    </ul>
+    
 </header>
 <div class="con1">
     <div class="center">
